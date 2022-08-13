@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import './screens/auth_screen.dart';
 import './screens/chat_screen.dart';
 import './screens/splash_screen.dart';
+import './screens/parking_screen.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
                         return SplashScreen();
                       }
                       if (userSnapshot.hasData) {
-                        return ChatScreen();
+                        return ParkingScreen();
                       }
                       return AuthScreen();
                     }),
