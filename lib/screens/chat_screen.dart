@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:sixth_app/screens/parking_screen.dart';
 
 import 'package:sixth_app/widgets/chat/messages.dart';
 import 'package:sixth_app/widgets/chat/new_message.dart';
@@ -31,7 +32,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('FlutterChat'),
+        title: Text('Chat'),
         actions: [
           DropdownButton(
             underline: Container(),
@@ -68,6 +69,19 @@ class _ChatScreenState extends State<ChatScreen> {
               child: Messages(),
             ),
             NewMessage(),
+            FlatButton(
+              textColor: Theme.of(context).accentColor,
+              child: Text(
+                'Parking',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ParkingScreen()));
+              },
+            ),
           ],
         ),
       ),
